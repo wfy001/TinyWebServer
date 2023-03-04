@@ -35,6 +35,7 @@ epoll是Linux上独有的IO多路复用技术。一个进程可以监视多个�
 
 # 11、select、poll和epoll的区别？三者的应用场景
 [image](https://user-images.githubusercontent.com/75972398/222871687-fe835cb3-c343-4cea-8ba2-24e59b01dc4c.png)
+
 当有事件触发时，select和poll需要用户自己去遍历文件描述符找出触发的事件，而epoll能够直接返回所有的触发事件；
 每次调用select和poll都需要将文件描述符集合拷贝到内核空间，返回时再拷贝一次。而epoll只需要拷贝需要修改的文件描述符而不需要集体的拷贝；
 select支持的文件描述符数量有上限，而poll和epoll没有此限制；
